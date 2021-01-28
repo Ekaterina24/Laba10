@@ -196,8 +196,8 @@ canvasCascade()
 //..............................................................................
 
 canvas.addEventListener('click', canvasClick)
-let clientX = 0
-let clientY = 0
+let X = 0
+let Y = 0
 
 let player1 = 0
 let player2 = 0
@@ -303,10 +303,12 @@ function canvasClick(click) {
         } else {
             alert('Это поле уже занято, выберите путое поле!')
         }
+
         Win()
     }
 
     draw()
+
 }
 
 function Win() {
@@ -509,9 +511,9 @@ function Text() {
         }
     } else if (winner == 'second') {
         if (currentPlayer % 2 == 0) {
-            motion.textContent = `Ходит первый игрок - ${playerFirstName}`
-        } else if (currentPlayer % 2 == 1) {
             motion.textContent = `Ходит второй игрок - ${playerSecondName}`
+        } else if (currentPlayer % 2 == 1) {
+            motion.textContent = `Ходит первый игрок - ${playerFirstName}`
         }
     }
 }
