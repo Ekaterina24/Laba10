@@ -516,4 +516,61 @@ function Text() {
     }
 }
 
+function firstWinFunc() {
+    winner = 'first'
+    count = 0
+    firstPlayerWins.textContent = `Первый игрок: ${player1}`
+    motion.textContent = `Ходит первый игрок - ${playerFirstName}`
+    let result = document.getElementById('result');
+    result.innerHTML = "<span id='gamer'></span>";
+    let gamer = document.getElementById('gamer');
+    gamer.innerHTML = 'Первый игрок выиграл.'
+}
+
+function secondWinFunc() {
+    winner = 'second'
+    count = 0
+    secondPlayerWins.textContent = `Второй игрок: ${player2}`
+    motion.textContent = `Ходит второй игрок - ${playerSecondName}`
+    let result = document.getElementById('result');
+    result.innerHTML = "<span id='gamer'></span>";
+    let gamer = document.getElementById('gamer');
+    gamer.innerHTML = 'Второй игрок выиграл.'
+}
+
+
+buttonNewRound.addEventListener('click', () => {
+    ctx.clearRect(0, 0, 420, 420)
+    canvasCascade()
+    result.innerHTML = "";
+    arr = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ]
+    currentPlayer = 0
+    count = 0
+    gameStopper = false
+})
+
+buttonReset.addEventListener('click', () => {
+    ctx.clearRect(0, 0, 420, 420)
+    canvasCascade()
+    arr = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ]
+    currentPlayer = 0
+    count = 0
+    winner = 'first'
+    gameStopper = false
+    player1 = 0
+    player2 = 0
+    motion.textContent = `Ходит первый игрок - ${playerFirstName}`
+    firstPlayerWins.textContent = `Первый игрок: ${player1}`
+    secondPlayerWins.textContent = `Второй игрок: ${player2}`
+    result.innerHTML = "";
+})
+
 
